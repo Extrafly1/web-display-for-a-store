@@ -1,0 +1,270 @@
+/* 
+  Для смены цвета элемента на странице, 
+  вы можете использовать функцию rgb() в CSS. 
+  Эта функция принимает три параметра: 
+  красный, зеленый и синий (RGB), 
+  каждый из которых может иметь значение от 0 до 255. 
+
+  Например:
+  - rgb(255, 0, 0) — это красный цвет, 
+  так как 255 — максимальное значение для красного, 
+  а зеленый и синий равны 0.
+  
+  - rgb(0, 255, 0) — это зеленый цвет,
+  так как 255 — максимальное значение для зеленого, 
+  а красный и синий равны 0.
+  
+  - rgb(0, 0, 255) — это синий цвет,
+  так как 255 — максимальное значение для синего, 
+  а красный и зеленый равны 0.
+
+  Вы также можете смешивать эти значения для получения других цветов. 
+  Например:
+  - rgb(255, 255, 0) — это желтый цвет (максимальное значение красного и зеленого).
+  - rgb(128, 0, 128) — это фиолетовый цвет (половина красного и максимальное значение синего).
+*/
+
+
+/*новинка*/
+
+.new {
+    background-color: rgb(219, 170, 71);
+    /*цвет фона*/
+    color: rgb(255, 255, 255);
+    /*цвет текста*/
+}
+
+
+/*акция*/
+
+.action {
+    background-color: rgb(219, 170, 71);
+    /*цвет фона*/
+    color: rgb(255, 255, 255);
+    /*цвет текста*/
+}
+
+
+/*скидка*/
+
+.discount {
+    background-color: rgb(219, 170, 71);
+    /*цвет фона*/
+    color: rgb(255, 255, 255);
+    /*цвет текста*/
+}
+
+
+/*=====================================*/
+
+@font-face {
+    font-family: 'DejaVu Sans';
+    src: url('fonts/DejaVu sans/DejaVuSans.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'zing rust';
+    src: url('fonts/zing rust/ofont.ru_Zing Rust.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'colus';
+    src: url('fonts/Colus/Colus-Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'aa';
+    src: url('fonts/AA\ Haymaker/aa_haymaker.ttf') format('truetype');
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(202, 213, 218);
+    overflow: hidden;
+}
+
+.fon>img {
+    width: 200%;
+    position: fixed;
+    z-index: -1000;
+    margin: -20% 0 0 -50%;
+}
+
+.human1 {
+    left: -10%;
+    top: -10%;
+}
+
+.human2 {
+    right: -10%;
+    bottom: -20%;
+}
+
+main {
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0vw;
+}
+
+dl {
+    list-style-type: none;
+    color: rgb(35, 31, 32);
+    margin: 0;
+}
+
+li {
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width: auto;
+    margin: 0.5vw;
+    border-radius: 1.5vw;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.count_action {
+    background-color: rgb(35, 31, 32);
+    width: 100%;
+    height: 100%;
+    border-radius: 0 1.5vw 1.5vw 0;
+    overflow: hidden;
+}
+
+.main_title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.main_title>img {
+    width: 3.6vw;
+    height: 3.6vw;
+    margin: 0.5vw;
+    border-radius: 100%;
+}
+
+.title>h1 {
+    font-size: 1.3vw;
+    font-family: 'DejaVu Sans', sans-serif;
+}
+
+.title>p {
+    font-size: 1vw;
+    font-family: 'zing rust', sans-serif;
+    margin: 0;
+    margin-top: -0.7vw;
+}
+
+.description>div {
+    padding-left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.description>div>p {
+    font-size: 1vw;
+    font-family: 'zing rust', sans-serif;
+    text-align: center;
+    margin: 0 2vw 0 0;
+}
+
+.description {
+    flex-grow: 1;
+}
+
+.count_action>div {
+    height: 100%;
+}
+
+.count_action>p {
+    height: calc(50%-1vw);
+}
+
+.count {
+    font-size: 1.5vw;
+    margin: 1vw 0 0 0;
+    color: rgb(255, 255, 255);
+    font-family: 'DejaVu Sans', sans-serif;
+    text-align: center;
+    margin: 0.5vw 0 0 0;
+}
+
+.new,
+.action,
+.discount {
+    font-size: 1.5vw;
+    border-radius: 0 0 1.5vw 0;
+}
+
+.new>p,
+.discount>p,
+.action>p {
+    text-align: center;
+    margin: 0;
+    font-family: 'zing rust', sans-serif;
+}
+
+.price {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-column-gap: 1vw;
+    color: rgb(255, 255, 255);
+    margin: 0 0.5vw 0 0.5vw;
+}
+
+.price>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(41, 62, 101);
+    border-radius: 1.5vw;
+    height: 2.5vw;
+}
+
+.price>div>img {
+    height: 1.5vw;
+}
+
+.price>div>h1 {
+    font-family: 'colus', sans-serif;
+    margin-right: 1vw;
+    font-size: 1vw;
+}
+
+.price>h1 {
+    margin: 0;
+    font-family: 'colus', sans-serif;
+    font-size: 1vw;
+    text-align: center;
+    background-color: rgb(41, 62, 101);
+    border-radius: 1.5vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column-title {
+    margin: -0.2vw 0.5vw -0.7vw 0.5vw;
+    border-radius: 1.5vw;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-column-gap: 1vw;
+    text-align: center;
+    font-family: 'colus', sans-serif;
+}
+
+.column-title>h1 {
+    padding: 0.5vw 0 0.5vw 0;
+    font-size: 1.2vw;
+    background-color: rgb(41, 62, 101);
+    border-radius: 1.5vw;
+    color: rgb(255, 255, 255);
+}

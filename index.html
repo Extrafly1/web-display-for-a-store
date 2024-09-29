@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Авиатор</title>
+</head>
+<!--Основной патерн таков, есть 2 колонки #column1 и #column2, в кажной и зних в самом низу неизменная часть .count_action,
+она присутствует независимо от остального контента. Наполнение основной части динамическое, есть заглавие группы .column-title,
+под которым находиться список <dl>, элемент списка <li> является одной позицией, всего на экране может вмещается 2 группы по 
+9 элементов всего 18 пунктов, но с учётом количества групп с разным количеством элементов, в каждой колонке может быть не более 8 пунктов.
+
+Общий патерн:
+                    <li>
+                        <div class="main_title"> основная часть.
+                            <img src="image/logo/konix.png" alt="logo">     ссылка на логотип производителя.
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>                название
+                                <p>РОССИЯ Konix Brewery</p>                 писание
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>                        процент алкоголя
+                                    <p>ПЛ. 11,7%</p>                        процент плотности
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>                        количество в наличии
+                            <div class="new" style="display: block;">       новинка
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">   скидка
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">     акция
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    
+в зависимости от наличия акции, скидки или новинки, заменять display: none; на display: block; и наоборот. 
+Такой блок акций в каждом элементе списка <li>
+Этот патерн должен формироваться на стороне сервера в php файле или подобным ему технологиях для связи напрямую с базой данных
+и обновлению в реальном времени.
+-->
+
+<body>
+    <div class="fon">
+        <img src="image/viator_patern.png" alt="Авиатор" class="patern">
+    </div>
+    <main>
+        <div id="column1">
+            <div>
+                <div class="column-title">
+                    <h1 id="title1">ячменное фильтрованное</h1>
+                    <h1 id="title2">0.5 Л</h1>
+                </div>
+                <dl>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: block;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: block;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: block;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                </dl>
+
+            </div>
+            <div class="price">
+                <div>
+                    <h1>ПЭТ</h1>
+                    <img src="image/bottle.png" alt="bottle">
+                </div>
+                <h1>0.5 Л = 13р</h1>
+                <h1>1.0 Л = 15р</h1>
+                <h1>1.5 Л = 17р</h1>
+            </div>
+        </div>
+        <div id="column2">
+            <div>
+                <div class="column-title">
+                    <h1 id="title1">ячменное фильтрованное</h1>
+                    <h1 id="title2">0.5 Л</h1>
+                </div>
+                <dl>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                </dl>
+            </div>
+            <div>
+                <div class="column-title">
+                    <h1 id="title1">ячменное фильтрованное</h1>
+                    <h1 id="title2">0.5 Л</h1>
+                </div>
+                <dl>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                </dl>
+            </div>
+            <div>
+                <div class="column-title">
+                    <h1 id="title1">ячменное фильтрованное</h1>
+                    <h1 id="title2">0.5 Л</h1>
+                </div>
+                <dl>
+
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="main_title">
+                            <img src="image/logo/konix.png" alt="logo">
+                            <div class="title">
+                                <h1>Konix Munich Helles</h1>
+                                <p>РОССИЯ Konix Brewery</p>
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <p>АЛК. 4,7%</p>
+                                    <p>ПЛ. 11,7%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="count_action">
+                            <p class="count">123</p>
+                            <div class="new" style="display: none;">
+                                <p>новинка</p>
+                            </div>
+                            <div class="discount" style="display: none;">
+                                <p>скидка</p>
+                            </div>
+                            <div class="action" style="display: none;">
+                                <p>акция 3+1</p>
+                            </div>
+                        </div>
+                    </li>
+                </dl>
+
+            </div>
+            <div class="price">
+                <div>
+                    <h1>ПЭТ</h1>
+                    <img src="image/bottle.png" alt="bottle">
+                </div>
+                <h1>0.5 Л = 13р</h1>
+                <h1>1.0 Л = 15р</h1>
+                <h1>1.5 Л = 17р</h1>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
